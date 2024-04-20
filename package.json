@@ -1,0 +1,16 @@
+{
+  "name": "sit323-737-2024-t1-prac5d",
+  "version": "1.0.0",
+  "description": "<b>SIT323/SIT737- Cloud Native Application Development</b>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "winston": "^3.13.0"
+  }
+}

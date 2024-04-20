@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  app1:
+    build: .
+    image: hariprasadvenugopal/sit737-week4:1.1.1
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+    container_name: my-app-week4
+    networks:
+      - my-bridge-network
+
+  app2:
+    build: .
+    image: hariprasadvenugopal/sit737-week4c:1.1.1
+    ports:
+      - '3040:3040'
+    environment:
+      - PORT=3040
+    container_name: my-app-week4c
+    networks:
+      - my-bridge-network
+
+  app3:
+    build: .
+    image: hariprasadvenugopal/sit737-week5:1.1.1
+    ports:
+      - '3080:3080'
+    environment:
+      - PORT=3080
+    container_name: my-app-week5
+    networks:
+      - my-bridge-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3080"]
+      interval: 1s
+
+networks:
+  my-bridge-network:
+    driver: bridge
